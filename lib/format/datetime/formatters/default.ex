@@ -7,10 +7,10 @@ defmodule Timex.Format.DateTime.Formatters.Default do
 
   ## Directive format
 
-  A directive is an optional _padding specifier_ followed by a _mnemonic_ enclosed
+  A directive is an optional _padding specifier_ followed by a _mnemonic_, all enclosed
   in braces (`{` and `}`):
 
-      <padding>{<mnemonic>}
+      {<padding><mnemonic>}
 
   Supported padding specifiers:
 
@@ -39,7 +39,7 @@ defmodule Timex.Format.DateTime.Formatters.Default do
 
   * `{D}`       - day number (1..31)
   * `{Dord}`    - ordinal day of the year (1..366)
-  * `{WDmon}`   - weekday, Monday first (0..6, no padding)
+  * `{WDmon}`   - weekday, Monday first (1..7, no padding)
   * `{WDsun}`   - weekday, Sunday first (0..6, no padding)
   * `{WDshort}` - abbreviated weekday name (Mon..Sun, no padding)
   * `{WDfull}`  - full weekday name (Monday..Sunday, no padding)

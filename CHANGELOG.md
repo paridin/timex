@@ -7,8 +7,44 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added/Changed
 
+- Changed `Timex.Duration.Parse` to be 2x faster
+
 ### Fixed
 
+---
+
+## 3.7.8
+
+### Added/Changed
+
+- Add Thai translations
+- Add Estonian translation
+- Added `TimezoneInfo.format_offset/1`
+
+### Fixed
+
+- Fix incorrect `Timex.weekday/2` typespecs
+- Added timezone field to set_options type
+- Corrected type definition for Types.week_of_month to include possiblity of 6th week (see #703)
+- Added specs to parse function to account for AmbiguousDateTime return type
+
+---
+
+## 3.7.6
+
+### Changed
+
+- The documentation on weekday formatting via `%w` and `%u` strftime directives and `WDmon` and `WDsun`
+default directives did not match, and worse, the behaviour had regressed as well and did not match the
+docs for either. The behaviour now matches between the two formatters, as does the documentation, and
+aligns with the C strftime specification (i.e. Monday is 1..7, Sunday is 0..6)
+
+### Fixed
+
+- Clarify docs on comparison granularity for days/weeks
+- Fix incorrect weekday formatting (see #668)
+- Handled edge case where no locally-defined timezone is present (see #670)
+- Invalid validation of ambiguous date/times during parsing (see #674)
 
 ---
 
@@ -100,7 +136,7 @@ removed the unnecessary parsing work that was going on here.
 
 ### Fixed
 
-- Handling of timezones across DST. More generally we now handle gaps/ambiguity 
+- Handling of timezones across DST. More generally we now handle gaps/ambiguity
 much more consistently
 - ZoneInfo parser was refactored, now properly supports version 2/3
 files, addresses some small bugs in previous code
